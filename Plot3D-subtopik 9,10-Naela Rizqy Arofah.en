@@ -1,0 +1,249 @@
+﻿% * Plot 3D
+% 
+% Naela Rizqy Arofah
+%% 22305144042
+%% Matematika B
+% 
+% * 3.9 Menggambar Titik pada ruang 3D
+% 
+% Menggambar titik pada ruang tiga dimensi (3D) merupakan proses
+% visualisasi titik dalam sistem koorditat tiga dimensi (3D). Ruang tiga
+% dimensi (3D) memiliki tiga sumbu utama : sumbu x,y, dan z yang
+% bersilangan tegak lurus satu sam lain. Titik dalam ruang tiga dimensi
+% (3D) dapat didefinisikan dengan tiga koordinat tersebut.
+% 
+% Untuk menggambar/memplot data titik dalam ruang,kita membutuhkan tiga
+%% vektor untuk koordinat titik-titik tersebut.
+% 
+% Gayanya sama seperti gaya di plot2D, yaitu dengan points=true;
+>n=400;...
+>plot3d(normal(1,n),normal(1,n),normal(1,n),points=true,style="."):
+ %image% Plot3D-subtopik 9,10-Naela Rizqy Arofah-001.png
+% Penjelasan :
+% 
+% 1. n=...; digunakan untuk menginisialisasi variabel n dengan nilai ...
+% variabel ini akan digunakan sebagai penentuan jumlah titik yang akan
+% digunakan dalam plot 3D.
+% 
+% 2. normal(1,n), Fungsi normal digunakan untuk menghasilkan milai-nilai
+% acak yang terdistribusi secara normal (gaussian) dengan rata-rata 1
+% dan deviasi standar 1. hal ini untuk mendapatkan koordinat x,y, dan z
+% untuk plot 3D.
+% 
+% 3. plot3d(...)merupakan fungsi yang digunakan untuk plot 3D dengan
+% parameter-parameter, antara lain yaitu :
+%% - points=true (mengatur agar titik-titik data ditampilkan dalam plot
+% tersebut).
+%% - style (untuk mengatur gaya titik yang akan ditampilkan dalam plot).
+% 
+% Berikut akan ditunjukkan contoh lainnya:
+>n=10000;...
+>plot3d(normal(1,n),normal(1,n),normal(1,n),points=true,style="."):
+ %image% Plot3D-subtopik 9,10-Naela Rizqy Arofah-002.png
+>n=200;...
+>plot3d(normal(1,n),normal(1,n),normal(1,n),points=true,style=","):
+ %image% Plot3D-subtopik 9,10-Naela Rizqy Arofah-003.png
+% Pada contok berikut akan ditunjukkan titik yang ditentukan dengan
+% vektor baris x,y,z
+>x=[100,200,400]; y=[150,300,450]; z=[300,500,700]; plot3d(x,y,z,points=true,style=","):
+ %image% Plot3D-subtopik 9,10-Naela Rizqy Arofah-004.png
+% Dimungkinkan juga untuk memplot kurva dalam 3D. Dalam hal ini, lebih
+% mudah untuk menghitung terlebih dahulu titik-titik kurva. Untuk kurva
+% pada bidang kita menggunakan barisan koordinat dan parameter
+% wire=true.
+>t=linspace(0,8pi,500)
+[0,  0.0502655,  0.100531,  0.150796,  0.201062,  0.251327,  0.301593,
+0.351858,  0.402124,  0.452389,  0.502655,  0.55292,  0.603186,
+0.653451,  0.703717,  0.753982,  0.804248,  0.854513,  0.904779,
+0.955044,  1.00531,  1.05558,  1.10584,  1.15611,  1.20637,  1.25664,
+1.3069,  1.35717,  1.40743,  1.4577,  1.50796,  1.55823,  1.6085,
+1.65876,  1.70903,  1.75929,  1.80956,  1.85982,  1.91009,  1.96035,
+2.01062,  2.06088,  2.11115,  2.16142,  2.21168,  2.26195,  2.31221,
+2.36248,  2.41274,  2.46301,  2.51327,  2.56354,  2.61381,  2.66407,
+2.71434,  2.7646,  2.81487,  2.86513,  2.9154,  2.96566,  3.01593,
+3.06619,  3.11646,  3.16673,  3.21699,  3.26726,  3.31752,  3.36779,
+3.41805,  3.46832,  3.51858,  3.56885,  3.61911,  3.66938,  3.71965,
+3.76991,  3.82018,  3.87044,  3.92071,  3.97097,  4.02124,  4.0715,
+4.12177,  4.17204,  4.2223,  4.27257,  4.32283,  4.3731,  4.42336,
+4.47363,  4.52389,  4.57416,  4.62442,  4.67469,  4.72496,  4.77522,
+4.82549,  4.87575,  4.92602,  4.97628,  5.02655,  5.07681,  5.12708,
+5.17734,  5.22761,  5.27788,  5.32814,  5.37841,  5.42867,  5.47894,
+5.5292,  5.57947,  5.62973,  5.68,  5.73027,  5.78053,  5.8308,
+5.88106,  5.93133,  5.98159,  6.03186,  6.08212,  6.13239,  6.18265,
+6.23292,  6.28319,  6.33345,  6.38372,  6.43398,  6.48425,  6.53451,
+6.58478,  6.63504,  6.68531,  6.73557,  6.78584,  6.83611,  6.88637,
+ ... ]
+>t=linspace(0,8pi,500);...
+>plot3d(sin(t),cos(t),t/10,>wire,zoom=2):
+ %image% Plot3D-subtopik 9,10-Naela Rizqy Arofah-005.png
+% Contoh lainnya :
+%% pertama kita tentukan terlebih dahulu titik-titik kurvanya
+>t=linspace(0,6pi,700)
+[0,  0.0269279,  0.0538559,  0.0807838,  0.107712,  0.13464,  0.161568,
+0.188496,  0.215423,  0.242351,  0.269279,  0.296207,  0.323135,
+0.350063,  0.376991,  0.403919,  0.430847,  0.457775,  0.484703,
+0.511631,  0.538559,  0.565487,  0.592415,  0.619343,  0.64627,
+0.673198,  0.700126,  0.727054,  0.753982,  0.78091,  0.807838,
+0.834766,  0.861694,  0.888622,  0.91555,  0.942478,  0.969406,
+0.996334,  1.02326,  1.05019,  1.07712,  1.10405,  1.13097,  1.1579,
+1.18483,  1.21176,  1.23869,  1.26561,  1.29254,  1.31947,  1.3464,
+1.37332,  1.40025,  1.42718,  1.45411,  1.48104,  1.50796,  1.53489,
+1.56182,  1.58875,  1.61568,  1.6426,  1.66953,  1.69646,  1.72339,
+1.75032,  1.77724,  1.80417,  1.8311,  1.85803,  1.88496,  1.91188,
+1.93881,  1.96574,  1.99267,  2.0196,  2.04652,  2.07345,  2.10038,
+2.12731,  2.15423,  2.18116,  2.20809,  2.23502,  2.26195,  2.28887,
+2.3158,  2.34273,  2.36966,  2.39659,  2.42351,  2.45044,  2.47737,
+2.5043,  2.53123,  2.55815,  2.58508,  2.61201,  2.63894,  2.66587,
+2.69279,  2.71972,  2.74665,  2.77358,  2.80051,  2.82743,  2.85436,
+2.88129,  2.90822,  2.93515,  2.96207,  2.989,  3.01593,  3.04286,
+3.06978,  3.09671,  3.12364,  3.15057,  3.1775,  3.20442,  3.23135,
+3.25828,  3.28521,  3.31214,  3.33906,  3.36599,  3.39292,  3.41985,
+3.44678,  3.4737,  3.50063,  3.52756,  3.55449,  3.58142,  3.60834,
+ ... ]
+>t=linspace(0,6pi,700);...
+>plot3d(sin(t),cos(t),t/3pi,>wire,zoom=2):
+ %image% Plot3D-subtopik 9,10-Naela Rizqy Arofah-006.png
+>X=cumsum(normal(7,70)); plot3d(X[1],X[2],X[3],>anaglyph,>wire,zoom=2):
+ %image% Plot3D-subtopik 9,10-Naela Rizqy Arofah-007.png
+% **  3.10 Mengatur tampilan, warna, dan sudut pandang gambar
+% 
+% Ada beberapa parameter untuk menskalakan fungsi atau mengubah tampilan
+% grafik.
+% 
+% - fscale : menskalakan ke nilai fungsi (default is <fscale)
+%% - scale : angka atau vektor 1x2 untuk menskalakan ke arah x dan y
+%% - frame : jenis bingkai (default 1)
+>plot3d("exp(-(x^2+y^2)/5)",r=10,n=80,fscale=4,scale=1.2,frame=3,>user):
+ %image% Plot3D-subtopik 9,10-Naela Rizqy Arofah-008.png
+% contoh lainnya :
+>plot3d("x^2+y^2",r=2,scale=[1.5,1,0.5]):
+ %image% Plot3D-subtopik 9,10-Naela Rizqy Arofah-009.png
+% Untuk mengatur tampilan pada bangun ruang 3D di euler yaitu dengan
+% berbagai cara, anta lain yaitu :
+% 
+% - distance : jarak pandang ke plot
+%% - zoom : zoom hasilnya
+%% - angle : sudut terhadap sumbu y
+%% - height : ketingiian pandangan dalam radian
+% 
+% Nilai default dapat diperiksa atau diubah dengan fungsi view(). Ini
+% mengembalikan parameter dalam urutan di atas.
+>view
+[5,  2.6,  2,  0.4]
+% Misalkan kita ambil contoh
+% 
+% latex: x^3+y^2
+% 
+% Lalu kita akan membuat distance 4, zoom 2, dengan sudut pi/3, dan
+% height 0, maka dapat kita tuliskan seperti :
+>plot3d("x^3+y^2",distance=4,zoom=2,angle=pi/3,height=0):
+ %image% Plot3D-subtopik 9,10-Naela Rizqy Arofah-010.png
+% Contoh kedua :
+% 
+% latex: 2x^3+2y^2
+% 
+% dengan distance 7,zoom=4, dengan sudut pandang pi/9,height 1
+%% maka akan terlihat seperti :
+>plot3d("2*x^3+2*y^2",distance=7,zoom=4,angle=pi/9,height=1):
+ %image% Plot3D-subtopik 9,10-Naela Rizqy Arofah-011.png
+% Plot akan selalu terlihat berda di tengah-tengah kubus plot. Agar
+% dapat terlihat berbeda kita dapat memindahkan bagian tengahnya dengan
+% parameter tengah "center"
+>plot3d("2*x^3+2*y^2",distance=7,zoom=4,angle=pi/9,height=1,...
+> center=[0.4,1,0]):
+ %image% Plot3D-subtopik 9,10-Naela Rizqy Arofah-012.png
+>
+% Plotnya diskalakan agar sesuai dengan unit kubus unuk dilihat. Jadi
+% tidak perlu mengubah jarak atau zoom tergantung ukuran plot.Namun
+% labelnya mengacu pada ukuran sebenarnya.
+% 
+% Jika ingin mematikannya dapat menggunakam scale=false, kita harus
+% berhati-hati agar plot tetap masuk ke dalam jendela plotting, dengan
+% mengubah jarak pandang atau zoom, dan memindahkan bagian tengah.
+>plot3d("5*exp(-x^4-y)",r=2,<fscale,<scale;...
+>distance=20,height=50°,center=[0,0,-2],frame=3,zoom=2):
+ %image% Plot3D-subtopik 9,10-Naela Rizqy Arofah-013.png
+% Selain itu cara untuk mengatur tampilan agar terlihat dari sisi lain
+%% kita dapat menggunakan parameter memutar fungsi atau rotate.
+% 
+% - rotate=1 : untuk memutar pada sumbu x
+%% - rotate=2 : untuk memutar pada sumbu z
+>plot3d("2*x",a=1,b=3,rotate=2,grid=5):
+ %image% Plot3D-subtopik 9,10-Naela Rizqy Arofah-014.png
+% Selanjutnya untuk mengubah rona suatu warna atau rona warna spektral.
+% Euler dapat menggambar ketinggian fungsi pada plot dengan arsiran. Di
+% semua plot 3D,Euler dapat menghasilkan anaglyph.
+% 
+% - >hue :Mengaktifkan bayangan cahaya.
+%% - >contour : Membuat plot garis kontur otomatis pada plot.
+%% - >spectral : Membuat warna spektral pada plot
+%% - level=...(atau levels): A Vektor nilai garis kontur.
+%% - color : mengubah warna selain warna spektral
+% 
+% Sebagai contohnya :
+% 
+% Kita akan menggambarkan
+%% latex: sin(x)^2
+% 
+% Dengan menggunakan >hue,>contour,>spectral dan color=... untuk
+% mengubah warna serta memberi bayangan pada gambar tersebut.
+>plot3d("sin(x)^2",angle=pi/6,>contour,color=green,>hue):
+ %image% Plot3D-subtopik 9,10-Naela Rizqy Arofah-015.png
+% Spektral untuk plot berikut, kita akan menggunakan skema sprektral
+% default (>spectral) dan menambah jumlah titik untuk mendapatkan
+% tampilan yang lebih halus.
+>plot3d("x^3+2*y^2",>spectral,>contour,n=100):
+ %image% Plot3D-subtopik 9,10-Naela Rizqy Arofah-016.png
+% Selain garis level otomatis, kita juga dapat menetapkan nilai garis
+% level. Ini akan menghasilkan garis level yang tipis (bukan rentang
+% level).
+>plot3d("2*x^3+y^2",0,5,0,5,level=-6:0.3:1,color=redgreen):
+ %image% Plot3D-subtopik 9,10-Naela Rizqy Arofah-017.png
+% Dalam plot berikut, kita menggunakan pita tingkat yang sangat luas
+% dari -0,1 hingga 1 dan dari 0,9 hingga 1. Ini dimasukkan sebagai
+% matrks dengan batas tingkat sebagai kolom.
+% 
+% Selain itu, kami melapisi grid dengan 10 interval di setiap arah.
+%% dengan menggunakan fungsi :
+% 
+% latex: x+y^2
+>plot3d("x+y^2",level=[-0.1,0.9;0,1],...
+>>spectral,angle=60°,grid=10,contourcolor=gray):
+ %image% Plot3D-subtopik 9,10-Naela Rizqy Arofah-018.png
+% Pada plot berikut, kita akan memplot suatu himpunan, dimana :
+% 
+% latex: x^y-y^x=0
+% 
+% kita akan menggunakan satu garis tipis untuk garis level.
+>plot3d("x^y-y^x",level=0,a=0,b=6,c=0,d=6,contourcolor=green,n=50):
+ %image% Plot3D-subtopik 9,10-Naela Rizqy Arofah-019.png
+% Dimungkinkan juga untuk menampilkan bidang kontur di bawah plot. Warna
+% dan jarak ke plot dapat ditentukan. (>cp)
+>plot3d("x^2+y^3",>cp,cpcolor=blue,cpdelta=0.2):
+ %image% Plot3D-subtopik 9,10-Naela Rizqy Arofah-020.png
+% Sumber cahaya dapat diubah dengan l dan tombol kursor selama interaksi
+% pengguna. Itu juga dapat diatur dengan parameter.
+% 
+% - light: arah
+%% - amb: cahaya sekitar antara 0 and 1
+% 
+% Catatan : program tidak membuat perbedaan antara sisi plot. Tidak ada
+% bayangan. Untuk ini, Anda memerlukan Povray.
+>plot3d("-x^2-y^2", ...
+>hue=true,light=[0,1,1],amb=0,user=true, ...
+> title="Press l and cursor keys (return to exit)"):
+ %image% Plot3D-subtopik 9,10-Naela Rizqy Arofah-021.png
+% Parameter warna mengubah warna permukaan. Warna garis level juga bisa
+% diubah.
+>plot3d("x^4+y^2",color=rgb(0.2,0.2,0),hue=true,frame=false, ...
+>zoom=3,contourcolor=blue,level=-2:0.1:1,dl=0.01):
+ %image% Plot3D-subtopik 9,10-Naela Rizqy Arofah-022.png
+% Kemudian jika color=0 maka akan memberikan efek warna pelangi. seperti
+% berikut :
+>plot3d("x^2/(x^4+y^3+5)",color=0,hue=true,grid=10):
+ %image% Plot3D-subtopik 9,10-Naela Rizqy Arofah-023.png
+% Kita juga dapat menampilkan dalam bentuk transparan, seperti berikut :
+>plot3d("x^2/(x^4+y^3+5)",>transparent,grid=10,wirecolor=blue):
+ %image% Plot3D-subtopik 9,10-Naela Rizqy Arofah-024.png
+>
+>
